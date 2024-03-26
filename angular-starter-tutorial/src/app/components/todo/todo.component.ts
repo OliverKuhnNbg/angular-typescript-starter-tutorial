@@ -25,6 +25,10 @@ export class TodoComponent implements OnInit {
         content: "task 3",
         completed: true
       },
+      {
+        content: "task 4",
+        completed: true
+      },
     ]
   }
 }
