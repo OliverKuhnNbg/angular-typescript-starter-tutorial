@@ -16,20 +16,29 @@ export class TodoComponent implements OnInit {
     this.todos = [
       {
         content: "task 1",
-        completed: true
+        completed: false
       },
       {
         content: "task 2",
-        completed: true
+        completed: false
       },
       {
         content: "task 3",
-        completed: true
+        completed: false
       },
       {
         content: "task 4",
-        completed: true
+        completed: false
       },
     ]
+  }
+
+  toggleDone (id:number) {
+    console.log ("id TEST: " + id);
+    // this.todos.map((item, index) => {
+    //     if(index == id) item.completed = !item.completed;
+
+    //     return item
+    // })
   }
 }
