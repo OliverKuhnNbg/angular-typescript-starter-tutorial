@@ -10,5 +10,5 @@ import { TodoComponent } from './components/todo/todo.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'Angular 17 ToDo App';
+  title = 'Angular 17 - ToDo App';
 }
