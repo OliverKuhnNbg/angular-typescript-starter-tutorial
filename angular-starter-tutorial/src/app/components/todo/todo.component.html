@@ -1,0 +1,37 @@
+<div class="todos">
+    <form
+    name="form"
+    #taskForm="ngForm"
+    (ngSubmit)="taskForm.form.valid && addTask()"
+    >
+        <input
+            type="text"
+            name="inputTodo"
+            placeholder="Enter your Todo"
+            class="todo-input"
+            [(ngModel)]="inputTodo"
+            required
+            minlength="0"
+            maxlength="20"
+        />
+        <button type="submit" class="todo-submit ">add task</button>
+    </form>
+</div>
+
+<div class="todos">
+    @for (todo of todos; track $index) {
+        <div 
+            class="todo"
+            [ngClass]="todo.completed ? 'done' : ''"
+        >
+            <div class="id">{{ $index+1 }}</div>
+            <div 
+                class="content" 
+                (click)="toggleDone($index)" 
+            >
+                {{ todo.content }}
+            </div>
+            <button class="delete" (click)="deleteTask($index)">remove</button>
+        </div>
+    }
+</div>
