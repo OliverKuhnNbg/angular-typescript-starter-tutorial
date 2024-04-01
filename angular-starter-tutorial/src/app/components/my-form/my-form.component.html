@@ -3,10 +3,47 @@
         <h3>Da Form</h3>
     </div>
     <div class="card-body">
+        <!-- userForm-->
         <form [formGroup]="userForm">
-
+            <div class="row mb-3">
+                <div class="col-6">
+                    <div class="input-group">
+                        <input type="text" formControlName="firstName" class="form-control" placeholder="first name*" aria-label="first name*">
+                    </div>
+                    <div class="ms-2 mt-1" *ngIf="userForm.controls['firstName'].invalid && (userForm.controls['firstName'].touched || !isFormValid || userForm.controls['firstName'].dirty)"> 
+                        <span class="text-danger" *ngIf="userForm.controls['firstName'].errors?.['required']">This is a required field</span>
+                        <span class="text-danger" *ngIf="userForm.controls['firstName'].errors?.['minlength']">you need min. three chars</span>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="input-group">
+                        <input type="text" formControlName="lastName" class="form-control" placeholder="last name*" aria-label="last name*">
+                    </div>
+                    <div class="ms-2 mt-1" *ngIf="userForm.controls['lastName'].invalid && (userForm.controls['lastName'].touched || !isFormValid || userForm.controls['lastName'].dirty)"> 
+                        <span class="text-danger" *ngIf="userForm.controls['lastName'].errors?.['required']">This is a required field</span>
+                        <span class="text-danger" *ngIf="userForm.controls['lastName'].errors?.['minlength']">you need min. three chars</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="input-group">
+                        <input type="text" formControlName="email" class="form-control" placeholder="e-mail*" aria-label="e-mail*">
+                    </div>
+                    <div class="ms-2 mt-1" *ngIf="userForm.controls['email'].invalid && (userForm.controls['email'].touched || !isFormValid || userForm.controls['email'].dirty)"> 
+                        <span class="text-danger" *ngIf="userForm.controls['email'].errors?.['required']">This is a required field</span>
+                        <span class="text-danger" *ngIf="userForm.controls['email'].errors?.['email']">please,enter a email address</span>
+                    </div>
+                </div>
+            </div>
+            
+                
             <!-- submit btn-->
-            <a href="#" class="btn btn-dark">Submit</a>
+            <div class="row mt-4">
+                <div class="col-3">
+                    <a (click)="onSubmit()" class="btn btn-dark">Submit</a>
+                </div>
+            </div>
         </form>
         
     </div>

@@ -15,7 +15,7 @@ export class MyFormComponent {
 
   constructor () {
     this.userForm = new FormGroup({
-      firstName: new FormControl("", [Validators.required]),
+      firstName: new FormControl("", [Validators.required,Validators.minLength(3)]),
       lastName: new FormControl("", [Validators.required, Validators.minLength(3)]),
       email: new FormControl("", [Validators.required, Validators.email]),
       // city: new FormControl(""),
@@ -24,15 +24,15 @@ export class MyFormComponent {
       // isAgree: new FormControl(false, [Validators.required])
     });
 
-    this.isFormValid = false;
+    this.isFormValid = true;
   }
 
   onSubmit() {
-    const isFormValid = this.userForm.valid;
-    console.log("\n\ntets: " + this.userForm.valid)
+    
+    console.log("\n\nTEST: " + this.userForm.valid)
     console.log(this.userForm.value)
-    if (!isFormValid) {
-      this.isFormValid = true
+    if (!this.userForm.valid) {
+      this.isFormValid = false;
     }
   }
 
