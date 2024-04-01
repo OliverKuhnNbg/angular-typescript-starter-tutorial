@@ -16,22 +16,7 @@ export class TodoComponent implements OnInit {
 
   ngOnInit(): void {
     this.todos = [
-      {
-        content: "task 1",
-        completed: false
-      },
-      {
-        content: "task 2",
-        completed: false
-      },
-      {
-        content: "task 3",
-        completed: false
-      },
-      {
-        content: "task 4",
-        completed: false
-      },
+      
     ]
   }
 
